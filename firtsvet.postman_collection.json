@@ -1,0 +1,25 @@
+{
+	"info": {
+		"_postman_id": "b9911c26-0b75-4394-b3c3-cefdee8ca316",
+		"name": "firtsvet",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://127.0.0.1:8000/api/slots",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": "http://127.0.0.1:8000/api/slots",
+				"description": "Get 15-minute available slots from json file"
+			},
+			"response": []
+		}
+	]
+}
