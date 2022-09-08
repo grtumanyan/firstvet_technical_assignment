@@ -8,7 +8,7 @@ class ParseJsonFileService
     private string $path = 'files/';
 
     public function __construct(private ValidateFileService $validateFileService,
-                                private SortFileService $sortFileService)
+                                private SortResultService $sortResultService)
     {
         //
     }
@@ -28,9 +28,6 @@ class ParseJsonFileService
 
         $result = [];
         $fifteenMinutes  = 15 * 60;
-
-        //Sort data
-        $data = ($this->sortFileService)($data);
 
         foreach($data as $value){
             if (!($this->validateFileService)($value)) {
@@ -76,6 +73,8 @@ class ParseJsonFileService
                 $startTime += $fifteenMinutes;
             }
         }
-        return $result;
+
+        //Sort result and return
+        return ($this->sortResultService)($result);
     }
 }
